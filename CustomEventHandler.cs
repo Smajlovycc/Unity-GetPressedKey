@@ -9,6 +9,8 @@ public interface IOnKeyPressed
 
 public class CustomEventHandler : MonoBehaviour, IOnKeyPressed
 {
+    public bool handleKeyInput = true;
+    
     private void Update()
     {
         HandleInput();
@@ -16,7 +18,7 @@ public class CustomEventHandler : MonoBehaviour, IOnKeyPressed
     
     void HandleInput()
     {
-        if (hovering)
+        if (handleKeyInput)
         {
             Array a = Enum.GetValues(typeof(KeyCode));
             for (int i = 0; i < a.Length; i++)
